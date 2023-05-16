@@ -1,4 +1,4 @@
-from Elena_Duragina import counting
+from elena_duragina import counting
 
 
 def test_counting_for_years_range_three_and_ten():
