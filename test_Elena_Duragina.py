@@ -29,4 +29,3 @@ def test_counting_for_empty_price():
             ' , ,2, , , , 2, , , ,90',
             ' , ,3, , , , 15, , , ,20']
     assert counting(data, [3, 10]) == (100, 0, 10)
-
