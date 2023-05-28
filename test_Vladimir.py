@@ -1,4 +1,4 @@
-from fasfas import *
+from main_vladimir import *
 
 
 def test_avg30_avg60():
