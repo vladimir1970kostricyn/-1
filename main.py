@@ -5,6 +5,8 @@ from elena_duragina import func_3
 from main_tim import func_4
 from main_vladimir import func_5
 
+fasa
+
 st.title("Программная инженерия. Практическая работа 10")
 
 func = st.selectbox(
