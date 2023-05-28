@@ -31,7 +31,7 @@ def unsurv(data):
             if unsurvived[6] > '60':
                 unsurv60 += 1
     return unsurv30, unsurv60
-def variant9():
+def func_5():
     with open("data.csv") as file:
         data = file.readlines()
     choice = st.radio("Среди кого вести поиск?:", ['среди спасенных', 'среди погибших'])
@@ -41,4 +41,4 @@ def variant9():
     else:
         st.warning("Погибшие пассажиры Титаника(первое число старше 60 второе моложе 30)")
         st.warning(unsurv(data))
-variant9()
+func_5()
