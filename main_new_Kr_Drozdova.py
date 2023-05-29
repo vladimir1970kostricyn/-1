@@ -4,34 +4,60 @@ st.title("Программная инженерия. Практическая р
 st.subheader("Найти количество мужчин и женщин по указанному классу обслуживания")
 
 
-def one_func():
+def result1(data):
     male = 0
     female = 0
+    for line in data:
+        lst = line.rstrip().split(",")
+        if lst[2] == "1":
+            if lst[5] == 'male':
+                male += 1
+            else:
+                female += 1
+    return male, female
+
+
+def result2(data):
+    male2 = 0
+    female2 = 0
+    for line in data:
+        lst = line.rstrip().split(",")
+        if lst[2] == "2":
+            if lst[5] == 'male':
+                male2 += 1
+            else:
+                female2 += 1
+    return male2, female2
+
+
+def result3(data):
+    male3 = 0
+    female3 = 0
+    for line in data:
+        lst = line.rstrip().split(",")
+        if lst[2] == "3":
+            if lst[5] == 'male':
+                male3 += 1
+            else:
+                female3 += 1
+    return  male3, female3
+
+
+var = st.selectbox(
+    label="Выберите класс обслуживания:",
+    options=["1", "2", "3"]
+)
+
+def one_func():
     with open("data.csv") as file:
-        var = st.selectbox(
-            label="Выберите класс обслуживания:",
-            options=["Первый", "Второй", "Третий"]
-        )
-        for line in file.readlines()[1:]:
-            lst = line.rstrip().split(",")
-            if var == "Первый" and lst[2] == "1":
-                if lst[5] == 'male':
-                    male += 1
-                else:
-                    female += 1
-            elif var == "Второй" and lst[2] == "2":
-                if lst[5] == 'male':
-                    male += 1
-                else:
-                    female += 1
-            elif var == "Третий" and lst[2] == "3":
-                if lst[5] == 'male':
-                    male += 1
-                else:
-                    female += 1
-        if var == "Первый":
-            st.success("В первом классе мужчин: " + str(male) + ", женщин: " + str(female))
-        elif var == "Второй":
-            st.success("Во втором классе мужчин: " + str(male) + ", женщин: " + str(female))
-        elif var == "Третий":
-            st.success("В треьем классе мужчин: " + str(male) + ", женщин: " + str(female))
+        data = file.readlines()
+    if var == "1":
+        st.success("Мужчин, девушек в первом классе")
+        st.success(str(result1(data)))
+    elif var == "2":
+        st.success("Мужчин, девушек в втором классе")
+        st.success(str(result2(data)))
+    elif var == "3":
+        st.success("Мужчин, девушек в третьем классе")
+        st.success(str(result3(data)))
+one_func()
