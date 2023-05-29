@@ -1,4 +1,4 @@
-from fasfas import *
+from main_new_Kr_Drozdova import *
 
 
 def test_result1():
