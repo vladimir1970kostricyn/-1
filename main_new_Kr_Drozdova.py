@@ -43,12 +43,13 @@ def result3(data):
     return  male3, female3
 
 
-var = st.selectbox(
-    label="Выберите класс обслуживания:",
-    options=["1", "2", "3"]
-)
+
 
 def one_func():
+    var = st.selectbox(
+    label="Выберите класс обслуживания:",
+    options=["1", "2", "3"]
+    )
     with open("data.csv") as file:
         data = file.readlines()
     if var == "1":
