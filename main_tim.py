@@ -1,23 +1,69 @@
 import streamlit as st
 
+def result(data):
+    name = []
+    x = []
+    for line in data:
+
+        data = line.rstrip().split(',')
+
+        if data[1] == "1":
+            if data[6] < "18" and data[5] != "age":
+                name = data[3]
+                x.append(name)
+
+    return x
+
+def result2(data):
+
+    male = []
+
+    x2 = []
+
+    for line in data:
+        data = line.rstrip().split(',')
+
+        if data[1] == "1":
+            if data[6] < "18" and data[5] != "age":
+
+
+                male = data[5]
+
+                x2.append(male)
+
+
+
+    return x2
+
+def result3(data):
+
+    age = []
+
+    x3 = []
+    for line in data:
+        data = line.rstrip().split(',')
+
+        if data[1] == "1":
+            if data[6] < "18" and data[5] != "age":
+
+                if data[6] == "":
+                    age = "неопределённ"
+                    x3.append(age)
+                else:
+                    age = data[6]
+                    x3.append(age)
+
+    return x3
+
+with open("data.csv") as file:
+    data = file.readlines()
+name = result(data)
+age = result2(data)
+sex = result3(data)
 
 def func_4():
-    with open('data.csv') as file:
-        i = 0
-        age = []
-        name = []
-        male = []
-        for line in file:
-            survived = line.rstrip().split(',')
-            if survived[1] == "1":
-                if survived[6] < "18" and survived[5] != "age":
+    for i in range(0, len(name)):
+        st.text(name[i] + " " + " " + age[i] + " " + " " + sex[i])
 
-                    name = survived[3]
-                    male = survived[5]
 
-                    if survived[6] == "":
-                        age = "неопределённ"
-                    else:
-                        age = survived[6]
-
-                    st.success(f" имя {name}"+ f" возраст {age}"+ f" пол {male}")
+func_4()
