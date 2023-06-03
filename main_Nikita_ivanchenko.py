@@ -8,7 +8,6 @@ def result(data):
     summa = 0
     d2 = 0
     fares = []
-    count = 0
     for line in data:
         data = line.rstrip().split(',')
         if data[5] == "male":
@@ -24,7 +23,6 @@ def result2(data):
     summa = 0
     d2 = 0
     fares = []
-    count = 0
     for line in data:
         data = line.rstrip().split(',')
         if data[5] == "male":
@@ -40,7 +38,6 @@ def result3(data):
     summa = 0
     d2 = 0
     fares = []
-    count = 0
     for line in data:
         data = line.rstrip().split(',')
         if data[5] == "male":
