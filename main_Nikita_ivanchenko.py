@@ -4,7 +4,6 @@ st.title("Программная инженерия. Практическая р
 st.subheader("Найти количество мужчин и женщин по указанному классу обслуживания")
 
 
-
 def result(data):
     summa = 0
     d2 = 0
@@ -19,6 +18,7 @@ def result(data):
                 summa += fare
                 fares += [fare]
     return fares
+
 
 def result2(data):
     summa = 0
@@ -35,6 +35,7 @@ def result2(data):
                 fares += [fare]
     return summa
 
+
 def result3(data):
     summa = 0
     d2 = 0
@@ -50,16 +51,19 @@ def result3(data):
                 fares += [fare]
     return d2
 
+
 with open("data.csv") as file:
     data = file.readlines()
+
+
 def avg():
     summa = result2(data)
     d2 = result3(data)
     avg = summa / d2
     return avg
 
-def two_func():
 
+def two_func():
     avg()
 
     var = st.selectbox(
@@ -76,4 +80,6 @@ def two_func():
     else:
         st.success(avg())
         print(f'Средняя цена билета = {avg()}')
+
+
 two_func()

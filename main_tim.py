@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def result(data):
     name = []
     x = []
@@ -14,8 +15,8 @@ def result(data):
 
     return x
 
-def result2(data):
 
+def result2(data):
     male = []
 
     x2 = []
@@ -25,18 +26,14 @@ def result2(data):
 
         if data[1] == "1":
             if data[6] < "18" and data[5] != "age":
-
-
                 male = data[5]
 
                 x2.append(male)
 
-
-
     return x2
 
-def result3(data):
 
+def result3(data):
     age = []
 
     x3 = []
@@ -55,11 +52,13 @@ def result3(data):
 
     return x3
 
+
 with open("data.csv") as file:
     data = file.readlines()
 name = result(data)
 age = result2(data)
 sex = result3(data)
+
 
 def func_4():
     for i in range(0, len(name)):

@@ -1,11 +1,8 @@
 import streamlit as st
 
 st.title("Программная инженерия. Практическая работа 9")
-st.subheader("Посчитать долю пассажиров Титаника, указав: вести поиск среди спасенных или погибших, искать в возрастных группах до 30 лет или старше 60 лет")
-
-
-
-
+st.subheader(
+    "Посчитать долю пассажиров Титаника, указав: вести поиск среди спасенных или погибших, искать в возрастных группах до 30 лет или старше 60 лет")
 
 
 def avg30_avg60(data):
@@ -20,6 +17,7 @@ def avg30_avg60(data):
                 avg60 += 1
     return avg60, avg30
 
+
 def unsurv(data):
     unsurv30 = 0
     unsurv60 = 0
@@ -31,6 +29,8 @@ def unsurv(data):
             if unsurvived[6] > '60':
                 unsurv60 += 1
     return unsurv30, unsurv60
+
+
 def func_5():
     with open("data.csv") as file:
         data = file.readlines()
@@ -41,4 +41,6 @@ def func_5():
     else:
         st.warning("Погибшие пассажиры Титаника(первое число старше 60 второе моложе 30)")
         st.warning(unsurv(data))
+
+
 func_5()

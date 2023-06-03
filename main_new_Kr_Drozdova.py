@@ -40,15 +40,13 @@ def result3(data):
                 male3 += 1
             else:
                 female3 += 1
-    return  male3, female3
-
-
+    return male3, female3
 
 
 def one_func():
     var = st.selectbox(
-    label="Выберите класс обслуживания:",
-    options=["1", "2", "3"]
+        label="Выберите класс обслуживания:",
+        options=["1", "2", "3"]
     )
     with open("data.csv") as file:
         data = file.readlines()
@@ -61,4 +59,6 @@ def one_func():
     elif var == "3":
         st.success("Мужчин, девушек в третьем классе")
         st.success(str(result3(data)))
+
+
 one_func()
